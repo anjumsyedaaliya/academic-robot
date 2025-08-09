@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raam Academy Robotics</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #e8f3fc;
+      overflow-x: hidden;
+    }
+ 
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+      align-items: center;
+    }
+    .navbar h1 {
+      color: #202020;
+      font-size: 26px;
+    }
+    .btn {
+      background: red;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+       text-decoration: none;
+    }
+
+  .hero {
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      color: #202020;
+    }
+    .highlight {
+      color: red;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+    .gift {
+      bottom: 22%;
+      left: 16%;
+      width: 80px;
+      animation: bounce 2s infinite;
+    }
+
+     .robot-girl {
+      max-width: 400px;
+      margin-top: 20px;
+      animation: float 4s ease-in-out infinite;
+    }
+   
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    .stats {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  background: white;
+  border-radius: 30px; 
+  margin: 40px auto;
+  padding: 20px 60px;
+  max-width: 800px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  align-items: center; 
+}
+
+    .stat {
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .stat img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+    }
+
+    .floating {
+      position: absolute;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.5;
+    }
+
+    .rocket { top: 20%; left: 15%; width: 60px; }
+    .drone { top: 50%; right: 10%; width: 60px; }
+    .bag { bottom: 20%; left: 10%; width: 60px; }
+    
+
+    
+@keyframes rise {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-800px); opacity: 0; }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+.wave-divider {
+  position: relative;
+  margin-top: -5px;
+  background-color: white; 
+}
+
+
+.video-section {
+      background-color: #ffffff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .video-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .video-section h2 span {
+      color: red;
+      text-decoration: underline;
+    }
+
+    .video-section p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .video-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .video-gallery iframe {
+      width: 300px;
+      height: 200px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .testimonial {
+      margin-top: 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: red;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .stats {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .video-gallery iframe {
+        width: 90%;
+        height: 180px;
+      }
+    }
+.register 
+{
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  background-color:#ffffff;
+}
+
+.register-wrap {
+  display: flex;
+  border: 2px solid #e8f3fc;
+  background-color:  #e8f3fc; 
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.2);
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.register-wrap_title {
+  flex: 1;
+}
+
+.register-wrap_title h3 {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.page-title_line {
+  display: block;
+  color: red;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.register-wrap_title p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.theme-btn {
+  background-color: red;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.theme-btn:hover {
+  background-color: red;
+}
+
+.register-image {
+  flex: 1;
+  display: flex;
+  justify-content: right;
+}
+.register-image img {
+  max-width: 100%;
+  max-height: 250px;
+  border-radius: 10px;
+}
+.alumini {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+.alumini-wrap {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.alumini-left {
+  text-align: left;
+}
+
+.alumini-left h3 {
+  font-size: 32px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.page-title_line {
+  display: block;
+  font-size: 24px;
+  color: #00bfff;
+  margin-top: 8px;
+}
+
+.alumini-left p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.alumini-right {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.alumini_item {
+  width: 220px;
+  height: 220px;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.alumini_item figure img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.alumini_item h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.alumini_item p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+}
+.skyblue {
+  background-color: #e0f7ff;
+}
+.sandal {
+  background-color: #fff3e0;
+}
+.pink {
+  background-color: #ffe6e6;
+}
+
+.features {
+  padding: 60px 20px;
+  background-color:#e8f3fc;;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.rocket-launch,
+.bot,
+.gift-box {
+  display: none; 
+}
+.features-wrap_title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.page-title {
+  font-size: 32px;
+  text-align: center;
+  color: #222;
+}
+.page-title_line {
+  color: #e60000;
+  font-weight: bold;
+  font-size: 36px;
+}
+.features-wrap_content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.features_left {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.features_left_image {
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.features_left_register {
+  text-align: center;
+}
+
+.features_left_register p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.theme-btn {
+  background-color: #e60000;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.theme-btn:hover {
+  background-color: #c40000;
+}
+
+
+.features_right {
+  flex: 2;
+  min-width: 300px;
+}
+
+.features_right_content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features_right_content li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.features_right_content figure {
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.features_right_content img {
+  width: 60px;
+  height: auto;
+}
+
+.features_right_content figcaption h6 {
+  font-size: 20px;
+  color: #333;
+  margin: 0 0 10px;
+}
+
+.features_right_content figcaption p {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+}
+
+
+@media (max-width: 768px) {
+  .features-wrap_content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .features_left,
+  .features_right {
+    width: 100%;
+  }
+
+  .features_right_content li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .features_right_content figure {
+    margin: 0 0 15px 0;
+  }
+}
+.coaches {
+  padding: 60px 20px;
+  background-color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.coaches .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.coaches-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.gutter-column_image {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.gutter-bg {
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.gutter-column_content {
+  flex: 1 1 55%;
+  text-align: left;
+}
+
+.page-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.page-title_line {
+  color: #e60000;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.gutter-column_content p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.theme-btn {
+  background-color: #e60000;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.theme-btn:hover {
+  background-color: #c40000;
+}
+
+@media (max-width: 768px) {
+  .coaches-wrap {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .gutter-column_content {
+    text-align: center;
+  }
+
+  .gutter-bg {
+    max-width: 220px;
+    height: 220px;
+  }
+}
+
+.features {
+  background-color: #e8f3fc;
+  padding: 60px 20px;
+}
+
+
+.features-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.features-wrap_title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.features-wrap_title .page-title {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.page-title_line {
+  color: #e60000;
+  font-weight: bold;
+}
+
+.features-wrap_title p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+.features-wrap_content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+.features_left {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.features_left_image {
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.features_left_register {
+  text-align: center;
+}
+
+.features_left_register p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.theme-btn {
+  background-color: #e60000;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.theme-btn:hover {
+  background-color: #c40000;
+}
+
+/* Right Side: Feature Points */
+.features_right {
+  flex: 2;
+  min-width: 300px;
+}
+
+.features_right_content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features_right_content li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.features_right_content figure {
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.features_right_content img {
+  width: 60px;
+  height: auto;
+}
+
+.features_right_content figcaption h6 {
+  font-size: 18px;
+  color: #333;
+  margin: 0 0 10px;
+}
+
+.features_right_content figcaption p {
+  font-size: 15px;
+  color: #555;
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .features-wrap_content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .features_left,
+  .features_right {
+    width: 100%;
+  }
+
+  .features_right_content li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .features_right_content figure {
+    margin: 0 0 15px 0;
+  }
+}
+#social {
+  background-color: #e8f3fc;
+  padding: 30px 0;
+  text-align: center;
+}
+
+#social .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#social .follow-us {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+#social .social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#social .social-icons a img {
+  width: 35px;
+  height: 35px;
+  transition: transform 0.3s ease;
+}
+
+#social .social-icons a:hover img {
+  transform: scale(1.1);
+}
+
+@media (max-width: 576px) {
+  #social .follow-us {
+    font-size: 18px;
+  }
+
+  #social .social-icons a img {
+    width: 30px;
+    height: 30px;
+  }
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.try-free-section {
+  background-color: #ffe5b4; /* Light Orange */
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  flex-wrap: wrap;
+}
+
+.footer-wrap_left {
+  flex: 1;
+  padding-right: 570px;
+}
+
+.footer-wrap_right img {
+  max-width: 300px;
+  height: auto;
+}
+
+.page-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.page-title_line {
+  display: block;
+  font-size: 20px;
+  color: #ff6600;
+}
+
+.theme-btn {
+  padding: 10px 20px;
+  background-color:red;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.theme-btn:hover {
+  background-color: red;
+}
+
+.contact-us {
+  background-color: #000;
+  color: white;
+  text-align: left;
+  padding: 40px 20px;
+}
+
+.contact-us h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.contact-us p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.contact-us i {
+  margin-right: 10px;
+  color: #ff6600;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #111;
+  color: #ccc;
+  flex-wrap: wrap;
+}
+
+.footer-bottom a {
+  color: #ccc;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+.bubbles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bubbles span {
+  position: absolute;
+  bottom: -60px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: bubbleUp 15s linear infinite;
+}
+
+.bubbles span:nth-child(1) {
+  left: 10%;
+  background: #ff7eb9;
+  width: 25px;
+  height: 25px;
+  animation-delay: 0s;
+}
+.bubbles span:nth-child(2) {
+  left: 30%;
+  background: #fcd34d;
+  width: 35px;
+  height: 35px;
+  animation-delay: 2s;
+}
+.bubbles span:nth-child(3) {
+  left: 50%;
+  background: #7afcff;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+.bubbles span:nth-child(4) {
+  left: 70%;
+  background: #b9fbc0;
+  width: 30px;
+  height: 30px;
+  animation-delay: 1s;
+}
+.bubbles span:nth-child(5) {
+  left: 90%;
+  background: #a0c4ff;
+  width: 18px;
+  height: 18px;
+  animation-delay: 3s;
+}
+
+@keyframes bubbleUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-120vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+</style>
+</head>
+<body>
+
+  <div class="navbar">
+    <h1>Raam Academy</h1>
+    <a href="https://forms.gle/6aNR1afSYEDLKnJo9" target="_blank" class="btn">Book a free trial</a>
+</div>
+ <section class="hero">
+  <h2>Play that makes <span class="highlight">kids future-ready!</span></h2>
+    <img src="images/robot-girl.png" alt="Robot Girl" class="robot-girl"/>
+    
+  
+   <img src="images/rocket.png" class="floating rocket" alt="Rocket" />
+    <img src="images/drone.png" class="floating drone" alt="Drone" />
+    <img src="images/bag.png" class="floating bag" alt="School Bag" />
+    <img src="images/gift-animation.gif" class="floating gift" alt="Gift Animation" />
+
+  </section>
+
+  <section class="stats">
+    <div class="stat">
+      <img src="images/kid.png" />
+      <div><strong>No age limit</strong><br>For kids</div>
+    </div>
+    <div class="stat">
+      <img src="images/students.png" />
+      <div><strong>100+</strong><br>Students</div>
+    </div>
+    <div class="stat">
+      <img src="images/countries.png" />
+      <div><strong>65</strong><br>Countries</div>
+    </div>
+    <div class="stat">
+      <img src="images/stars.png" />
+      <div><strong>4.6/5</strong><br>Google & FB</div>
+    </div>
+  </section> 
+
+
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="display:block; width:100%; height:100px;">
+    <path d="M0,30 C360,80 1080,0 1440,50 L1440,0 L0,0 Z" fill="#e6f3fc"></path>
+  </svg>
+</div>
+
+
+ <section id="student-projects" style="background-color: #ffffff; text-align: center; padding: 60px 20px;">
+  <h2>See what students built <span style="color:red;">with Raam Academy!</span></h2>
+  <p>At Raam Academy, students solve real-world problems and learn cutting-edge technologies that prepare them for the future – while having fun!</p>
+
+ 
+  <iframe width="600" height="340"
+    src="https://www.youtube.com/embed/_CZlrtVoQ1E"
+    title="Raam Academy Student Project"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+  <section class="register">
+            <div class="container">
+              <div class="register-wrap">
+                <div class="register-wrap_title page-content">
+                  <div class="col-sm-8">
+                    <h3 class="page-title">
+                      Try for free
+                     </h3>
+                    <p>
+                      Let your child experience the magic of play based learning in this free 1:1 Live Online Class. Book your slot now!
+                    </p>
+                    <a href="https://forms.gle/6aNR1afSYEDLKnJo9" target="_blank" class="btn">Book a free trial</a>
+                    </div>
+                  <div class="register-image">
+                    <img src="https://assets.skyfilabs.com/playto/img/register.png" alt="Register">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+<section class="alumini">
+  <div class="container">
+    <div class="alumini-wrap">
+      <div class="alumini-left">
+        <h3 class="page-title">
+          Get your child <span class="page-title_line">Ready for the future</span>
+        </h3>
+        <p>
+          Learn from a team that has developed 100+ experiential learning courses, has a place in the Limca Book of Records,
+          co-authored papers on project based learning and won awards for their work.
+        </p>
+
+        <div class="alumini-right">
+          <div class="alumini_item skyblue">
+            <figure>
+              <img src="https://assets.skyfilabs.com/playto/img/robot.svg" alt="Future-ready">
+            </figure>
+            <h4>Future-ready topics</h4>
+            <p>
+              Topics like STEM and Robotics that will prepare your child for a future filled with Automation and Robotics.
+            </p>
+          </div>
+          <div class="alumini_item sandal">
+            <figure>
+              <img src="https://assets.skyfilabs.com/playto/img/school.svg" alt="Curriculum">
+            </figure>
+            <h4>School curriculum ++</h4>
+            <p>
+              Helps in understanding the relevance of curriculum in schools and thereby an increased interest to learn.
+            </p>
+          </div>
+          <div class="alumini_item pink">
+            <figure>
+              <img src="https://assets.skyfilabs.com/playto/img/wrench.svg" alt="Learning">
+            </figure>
+            <h4>Hands-on learning</h4>
+            <p>
+              Learning by doing helps better understanding and retaining of concepts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+<section class="features">
+            <div class="rocket-launch"></div>
+            <div class="container">
+              <div class="features-wrap">
+                <div class="features-wrap_title page-content">
+                  <h3 class="page-title">
+                    Enrollments Open:
+                    <br>
+                    <span class="page-title_line">Raam Academy Robotics</span>
+                  </h3>
+                </div>
+                <div class="features-wrap_content">
+                  <div class="features_left">
+                    <div class="features_left_image" style="background-image: url(https://assets.skyfilabs.com/playto/img/personality.png);"></div>
+                    <div class="features_left_register">
+                      <p>
+                        Get your<br>1:1 Live Online Robotics Session<br>for Free.
+                        <span class="page-title_line">Register Now</span>
+                      </p>
+                     <a href="https://forms.gle/6aNR1afSYEDLKnJo9" target="_blank" class="btn">Book a free trial</a>
+                  </div>
+                  </div>
+                  <div class="features_right">
+                    <div class="features_right_content">
+                      <ul>
+                        <li>
+                          <figure>
+                            <img src="https://assets.skyfilabs.com/playto/img/age-8-10.svg" alt="Explore">
+                          </figure>
+                          <figcaption>
+                            <h6> Robotics Starter</h6>
+                            <p>
+                              Perfect for your child to make the first steps into technology. Let's build the right kind of curiosity in your child.
+                            </p>
+                          </figcaption>
+                        </li>
+                        <li>
+                          <figure>
+                            <img src="https://assets.skyfilabs.com/playto/img/age-11-13.svg" alt="Explore">
+                          </figure>
+                          <figcaption>
+                            <h6>Robotics Explorer</h6>
+                            <p>Let your child dive deeper into the world of Robotics and Coding. See how creativity and innovation improves the confidence in your child.
+                            </p>
+                          </figcaption>
+                        </li>
+                        <li>
+                          <figure>
+                            <img src="https://assets.skyfilabs.com/playto/img/age-14-16.svg" alt="Explore">
+                          </figure>
+                          <figcaption>
+                            <h6>Robotics Champion</h6>
+                            <p>Prepare to launch your child into a great career ahead. Give an exposure that helps your child make the right career choices.
+                            </p>
+                          </figcaption>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bot"></div>
+            <div class="gift-box"></div>
+          </section>
+         <section class="coaches">
+  <div class="container">
+    <div class="coaches-wrap">
+      <div class="gutter-column_image">
+        <div class="gutter-bg" style="background-image: url(https://assets.skyfilabs.com/playto/img/playto-coaches.png);"></div>
+      </div>
+      <div class="gutter-column_content page-content">
+        <h3 class="page-title">
+          Raam Academy<span class="page-title_line">Coaches</span>
+        </h3>
+        <p>
+          Raam Academy Coaches help your child through Live Online sessions as your child is working on Academy Toys and Missions.
+          The coaches use inquiry-based learning pedagogy and encourage your child to think and come up with creative ideas to solve real-world problems.
+        </p>
+       <a href="https://forms.gle/6aNR1afSYEDLKnJo9" target="_blank" class="btn">Book a free trial</a>
+</div>
+    </div>
+  </div>
+</section>
+<section class="features">
+            <div class="container">
+              <div class="features-wrap">
+                <div class="features-wrap_title page-content">
+                  <h3 class="page-title">
+                    Raam Academy helps not just in developing the skills of the future.
+                    <br>
+                    But also in
+                    <span class="page-title_line">building a personality.</span>
+                  </h3>
+				  <br>
+				  <p>Regular academics treat failure harshly. So kids stop experimenting and lose their confidence to innovate.<br>
+					Play based learning creates innovators - by encouraging kids to experiment, fail, and learn from failures.</p>
+                </div>
+                <div class="features-wrap_content">
+                  <div class="features_left">
+                    <div class="features_left_image" style="background-image: url(https://assets.skyfilabs.com/playto/img/Online-robotics-class-for-free.jpg);"></div>
+                    <div class="features_left_register">
+                      <p>
+                        Get your 1:1 Live Online Class <br> for Free.
+                        <span class="page-title_line">Register Now</span>
+                      </p>
+                      <a href="https://forms.gle/6aNR1afSYEDLKnJo9" target="_blank" class="btn">Book a free trial</a>
+                     </div>
+                  </div>
+                  <div class="features_right">
+                    <div class="features_right_content">
+                      <ul>
+                        <li>
+                          <figure>
+                            <img src="https://assets.skyfilabs.com/playto/img/creative.svg" alt="Explore">
+                          </figure>
+                          <figcaption>
+                            <h6>Explore. Not memorize.</h6>
+                            <p>
+                              Your child will learn by solving real-world
+                              problems and building actual products.
+                            </p>
+                          </figcaption>
+                        </li>
+                        <li>
+                          <figure>
+                            <img src="https://assets.skyfilabs.com/playto/img/vote.svg" alt="Mistakes">
+                          </figure>
+                          <figcaption>
+                            <h6>Make mistakes. And learn.</h6>
+                            <p>
+                              While inventing the electric bulb, Edison said,
+                              "I've not failed. I've just found 10,000 ways that
+                              won't work."
+                            </p>
+                          </figcaption>
+                        </li>
+                        <li>
+                          <figure>
+                            <img src="https://assets.skyfilabs.com/playto/img/confidence.svg" alt="Confidence">
+                          </figure>
+                          <figcaption>
+                            <h6>Confidence. Not just marks.</h6>
+                            <p>
+                              Your child will learn to face the real world. And
+                              develop the confidence to change it.
+                            </p>
+                          </figcaption>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bot"></div>
+            <div class="gift-box"></div>
+          </section>
+          <section id="social">
+            <div class="container">
+              <div class="row flex-column flex-sm-row justify-content-center align-items-center">
+                <span class="follow-us">Follow us</span>
+                <div class="social-icons">
+                  <a href="https://m.facebook.com/61575919680431/" target="_blank"><img style="max-width: 35px; margin-right: 0.5rem" class="img-fluid" src="https://assets.skyfilabs.com/playto/img/fb-icon.svg" alt="fb"></a>
+
+                  <a href="https://www.instagram.com/raam_academy?igsh=MW5jOThvcXI2NGx3Mw==" target="_blank"><img style="max-width: 35px; margin-right: 0.5rem" class="img-fluid" src="https://assets.skyfilabs.com/playto/img/insta-icon.svg" alt="insta"></a>
+
+                  <a href="https://www.linkedin.com/company/raamacademyglobal/posts/?feedView=all" target="_blank"><img style="max-width: 35px; margin-right: 0.5rem" class="img-fluid" src="https://assets.skyfilabs.com/playto/img/linkedin-icon.svg" alt="linkedin"></a>
+
+                  <a href="https://www.youtube.com/@raamacademy" target="_blank"><img style="max-width: 35px" class="img-fluid" src="https://assets.skyfilabs.com/playto/img/youtube-icon.svg" alt="yt"></a>
+                </div>
+              </div>
+            </div>
+          </section>
+       
+<footer>
+   <div class="try-free-section">
+    <div class="container footer-wrap">
+      <div class="footer-wrap_left">
+        <h3 class="page-title">
+          Try for free <br>
+          <span class="page-title_line">register now</span>
+        </h3>
+        <p>Book your free trial class to see the magic of play based learning!</p>
+       <a href="https://forms.gle/6aNR1afSYEDLKnJo9" target="_blank" class="btn">Book a free trial</a>
+       </div>
+      <div class="footer-wrap_right">
+        <img src="https://assets.skyfilabs.com/playto/img/robot.png" alt="Playto Register">
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-column">
+        <h4>Contact Us</h4>
+      <p><i class="fas fa-map-marker-alt"></i> 23, Kamarajar Road (Near Ragland School),<br> Satchiyapuram, Sivakasi - 626124</p>
+      <p><i class="fas fa-phone-alt"></i> +91 75581 75875</p>
+      <p><i class="fas fa-envelope"></i> raamacademy.global@gmail.com</p>
+    </div>
+  </div>
+
+<div class="footer-bottom">
+    <div class="footer-bottom-left">
+      <p>© 2025 RAAM Academy. All rights reserved.</p>
+    </div>
+    <div class="footer-bottom-right">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+
+</footer>
+<div class="bubbles">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+</body>
+</html>
